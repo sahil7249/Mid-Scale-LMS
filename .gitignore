@@ -1,1 +1,5 @@
 venv
+requirements.txt
+.env
+settings.py
+db.sqlite3
