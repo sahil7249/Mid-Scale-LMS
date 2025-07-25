@@ -3,3 +3,6 @@ requirements.txt
 .env
 settings.py
 db.sqlite3
+notes.txt
+migrations
+users/admin.py
