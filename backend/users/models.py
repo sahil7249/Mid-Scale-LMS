@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.db.models.functions import Now
 
 class User(AbstractUser):
     ROLE_CHOICES = (
@@ -9,8 +10,8 @@ class User(AbstractUser):
     )
 
     role = models.CharField(max_length=12,choices=ROLE_CHOICES)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True,default=Now())
+    updated_at = models.DateTimeField(auto_now=True,default=Now())
     @property
     def isStudent(self):
         return self.role == 'student'
