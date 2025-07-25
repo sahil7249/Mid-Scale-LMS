@@ -9,6 +9,8 @@ class User(AbstractUser):
     )
 
     role = models.CharField(max_length=12,choices=ROLE_CHOICES)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     @property
     def isStudent(self):
         return self.role == 'student'
