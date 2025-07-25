@@ -13,6 +13,3 @@ class RegisterUserView(APIView):
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
         return Response(UserSerialzer(user).data,status=status.HTTP_200_OK)
-    
-
-
